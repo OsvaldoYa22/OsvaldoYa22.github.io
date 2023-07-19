@@ -198,5 +198,5 @@ htmlwidgets::onRender(jsCode = htmlwidgets::JS("function(btn,map){
                                                  }
                                                  ")) %>%
 ```
-Obtenga el cogico completo [aquí](https://github.com/OsvaldoYa22/leaflet)
+Obtenga el código completo [aquí](https://github.com/OsvaldoYa22/leaflet)
 
