@@ -177,10 +177,6 @@ Agregar un nuevo valor al vector
 ```R
 v[length(v)+1] = 100 #agregar 100 a la ultima posición + 1
 ```
-My go-to rules is normally one of those two ruleset:
-
-- [https://github.com/NSAKEY/nsa-rules/blob/master/_NSAKEY.v2.dive.rule](https://github.com/NSAKEY/nsa-rules/blob/master/_NSAKEY.v2.dive.rule)
-- [https://github.com/NotSoSecure/password_cracking_rules/blob/master/OneRuleToRuleThemAll.rule](https://github.com/NotSoSecure/password_cracking_rules/blob/master/OneRuleToRuleThemAll.rule)
 
 
 
