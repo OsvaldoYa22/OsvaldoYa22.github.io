@@ -12,7 +12,10 @@ categories:
   - R
   - Mapas
 tags:  
-  - rsync
+  - R
+  - Mapas
+  - HTML
+  - Leaflet
 ---
 
 ![](/assets/images/Captura15.PNG)
