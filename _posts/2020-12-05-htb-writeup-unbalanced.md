@@ -132,14 +132,12 @@ De una froma similar agregamos nuestros puntos, al ser puntos nosotros contamos 
              popup = paste("<b>","Tipo : ","</b>",as.character(Robo_Vehiculo_con_Violencia$clas_con_f_alarma),"<br>",
                            "<b>","Categoria : ","</b>",as.character(Robo_Vehiculo_con_Violencia$incidente_c4),"<br>"),
              group = paste("Puntos","(",nrow(Robo_Vehiculo_con_Violencia),")"),options = pathOptions(pane="li"))%>%
-
 ```
 ### Mapa de calor 
 Con la función `addWebGLHeatmap` agreamos a nuestro mapa un acumulado de esos puntos mediante una gama de colores, es decir se crea un mapa de calor
 ```R
 addWebGLHeatmap(data = Robo_Vehiculo_con_Violencia,lng = Robo_Vehiculo_con_Violencia$longitud,lat = Robo_Vehiculo_con_Violencia$latitud, group = "Mapa de calor",size=700,gradientTexture = "skyline",
                   opacity = 0.7 )%>%
-
 ```
 ### Filtros
 Agregamos nuestro addLayer, estos son los grupos que creamos anteriormente para que se puedan filtrar los datos según lo necesitemos
@@ -161,7 +159,6 @@ addLayersControl(overlayGroups = c( "&nbsp; <b>Vista </b> &nbsp; ", ## Esto se v
                                       
   ),
   options = layersControlOptions(collapsed = T))%>% 
-
 ```
 Ahora necesitamos darle un fromato a nuestro addLayer, para que nuestros "titulos" tengan un fondo del color que nosotros le indiquemos y la posición que necesitemos para las descripciones de nuestros addLayers
 ```R
@@ -201,5 +198,5 @@ htmlwidgets::onRender(jsCode = htmlwidgets::JS("function(btn,map){
                                                  }
                                                  ")) %>%
 ```
-
+Obtenga el cogico completo [aquí](https://github.com/OsvaldoYa22/leaflet)
 
