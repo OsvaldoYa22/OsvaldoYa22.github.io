@@ -32,16 +32,16 @@ Leaflet es una paquetería altamente versátil y poderosa que permite crear visu
 
 ## Cargamos los datos y capas para nuestro mapa
 ```R
-base <- read.csv("THALES_BASE_2019_2020_parte_1.csv", header = T,stringsAsFactors = F)
+base <- read.csv("BASE.csv", header = T,stringsAsFactors = F)
 #SHP alcaldias
 ALCALDIAS <- spTransform(shapefile("POLIGONOS/ALCALDIAS.shp"), "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 #SHP vialidades primarias
 VIALIDADES_PRIMARIAS <- spTransform(shapefile("POLIGONOS/VIALIDADES CATEGO_PRIMARIA.shp"), "+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0")
 #Ordenamos las variables de los tipos de delitos
-orden <- order(unique(base$incidente_c4))
-casos <- unique(base$incidente_c4)
+orden <- order(unique(base$incidente))
+casos <- unique(base$incidente)
 casos[orden]
-Robo_Vehiculo_con_Violencia <- base[which((base$incidente_c4) == "Robo-Vehiculo con Violencia"),]
+Robo_Vehiculo_con_Violencia <- base[which((base$incidente) == "Robo-Vehiculo con Violencia"),]
 ```
 ## Diseño del mapa
 
@@ -130,7 +130,7 @@ De una froma similar agregamos nuestros puntos, al ser puntos nosotros contamos 
 ```R
   addCircles(data = Robo_Vehiculo_con_Violencia,lng = Robo_Vehiculo_con_Violencia$longitud,lat = Robo_Vehiculo_con_Violencia$latitud,color = "#9AC0CD" ,radius = 5,fillOpacity = T,
              popup = paste("<b>","Tipo : ","</b>",as.character(Robo_Vehiculo_con_Violencia$clas_con_f_alarma),"<br>",
-                           "<b>","Categoria : ","</b>",as.character(Robo_Vehiculo_con_Violencia$incidente_c4),"<br>"),
+                           "<b>","Categoria : ","</b>",as.character(Robo_Vehiculo_con_Violencia$incidente),"<br>"),
              group = paste("Puntos","(",nrow(Robo_Vehiculo_con_Violencia),")"),options = pathOptions(pane="li"))%>%
 ```
 ### Mapa de calor 
