@@ -1,7 +1,8 @@
 ---
 layout: single
-title: TCP bind shellcode
-date: 2018-11-18
+title: Dash - Python
+excerpt: "Es una libreria de interfaz de usuario/framework de Python para crear aplicaciones web analíticas, por ejemplo el análisis de datos, exploración de datos, visualización, modelado, control de instrumentos e informes."
+date: 2023-07-10
 classes: wide
 header:
   teaser: /assets/images/slae32.png
@@ -9,11 +10,11 @@ categories:
   - slae
   - infosec
 tags:
-  - slae
-  - assembly
-  - tcp bind shellcode
+  - Python
+  - Dash
+  - Plotly
 ---
-A bind shellcode listens on a socket, waiting for a connection to be made to the server then executes arbitrary code, typically spawning shell for the connecting user. This post demonstrates a simple TCP bind shellcode that executes a shell.
+
 
 The shellcode does the following:
 1. Creates a socket
