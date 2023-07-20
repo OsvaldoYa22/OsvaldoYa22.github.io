@@ -5,7 +5,7 @@ excerpt: " Dash es una libreria de interfaz de usuario/framework de Python para 
 date: 2023-07-10
 classes: wide
 header:
-  teaser: /assets/images/slae32.png
+  teaser: /assets/images/Captura_dash.PNG
 categories:
   - Python
 tags:
