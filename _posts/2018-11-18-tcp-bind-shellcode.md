@@ -6,6 +6,8 @@ date: 2023-07-10
 classes: wide
 header:
   teaser: /assets/images/Captura_dash.PNG
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
 categories:
   - Python
 tags:
