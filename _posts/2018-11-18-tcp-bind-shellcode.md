@@ -17,7 +17,8 @@ tags:
 ---
 ![](/assets/images/Captura_dash.PNG)
 
-Esta es una versión [demo](https://github.com/OsvaldoYa22/app_dash/tree/main) de una app, que muestra de una forma comoda los analisis descriptivos y econometricos sobre los __Robos en CDMX__
+Esta es una versión [demo](https://github.com/OsvaldoYa22/app_dash/tree/main) de una app, que muestra de una forma comoda los analisis descriptivos y econometricos sobre los __Robos en CDMX__, si desea ejecutar la app de forma local visite el siguiente repositorio [OsvaldoYa22/app_dash](https://github.com/OsvaldoYa22/app_dash/tree/main)
+
 ![](/assets/images/Captura_APP.PNG)
 
 ## Requirements
