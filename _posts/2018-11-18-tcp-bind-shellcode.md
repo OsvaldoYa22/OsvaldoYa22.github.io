@@ -1,7 +1,7 @@
 ---
 layout: single
-title: Robos - app 
-excerpt: "Es una libreria de interfaz de usuario/framework de Python para crear aplicaciones web analíticas, por ejemplo el análisis de datos, exploración de datos, visualización, modelado, control de instrumentos e informes.  Dash se basa en Flask, React y Plotly, y combina la potencia de estas tecnologías para proporcionar una manera sencilla de crear aplicaciones web interactivas con visualizaciones de datos dinámicas."
+title: Robos - Dash
+excerpt: " Dash es una libreria de interfaz de usuario/framework de Python para crear aplicaciones web analíticas, por ejemplo el análisis de datos, exploración de datos, visualización, modelado, control de instrumentos e informes.  Dash se basa en Flask, React y Plotly, y combina la potencia de estas tecnologías para proporcionar una manera sencilla de crear aplicaciones web interactivas con visualizaciones de datos dinámicas."
 date: 2023-07-10
 classes: wide
 header:
@@ -141,7 +141,8 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
     ```
     * Se crea un componente de gráfica `Graph` utilizando Dash. Se asigna el identificador `'Mi_grafica_ST_2'` a la gráfica y se inicializa con una figura vacía `figure = {}`. Este identificador será útil para actualizar el contenido de la gráfica más adelante mediante un callback.
 ## Graficas
-1. ```python
+* Alcaldias 
+  ```python
    def update_graph_01_2016(value):
     fig = None
     if value == 'Data_FGJ':
@@ -160,7 +161,17 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
         fig = px.line(x = x, y = y)
     return fig
    ```
-2. ```python
+  * Se define una función llamada `update_graph_01_2016` que toma un solo argumento `value`.
+  * Se inicializa la variable `fig` con el valor `None`.
+  * Se realiza una comprobación del valor `value` para determinar qué tipo de gráfica se debe generar. Si `value` es igual a `'Data_FGJ'`, se procederá a generar un gráfico de tipo "Treemap" utilizando el DataFrame `conteo_colonia_2016`. De lo contrario, se generará un gráfico de línea simple.
+  * Si el valor es igual a `'Data_FGJ'`, se genera un gráfico de tipo "Treemap" utilizando la biblioteca Plotly Express (px). El gráfico se basará en el DataFrame `conteo_colonia_2016`.
+  * `path` Se define una jerarquía para representar la estructura del Treemap. Aquí, se utiliza `path=[px.Constant("Ciudad De México"), 'NOMDT']`, lo que significa que el Treemap tendrá una primera capa con el título "Ciudad De México" y una segunda capa con la columna 'NOMDT' del DataFrame.
+  * `values` Se define la columna del DataFrame que se utilizará para determinar el tamaño de las cajas en el Treemap. Aquí, se utiliza `'ROBOS'`.
+  * `color` Se define la columna del DataFrame que se utilizará para determinar el color de las cajas en el Treemap. Aquí, se utiliza `'NOMDT'`.
+  * `color_continuous_scale` Se define la escala de colores utilizada para el Treemap. Aquí, se utiliza el tema `'orrd'`.
+  * `hover_data` Se define qué información se mostrará cuando se pase el cursor sobre las cajas del Treemap. Aquí, se muestra el nombre de la colonia y el número de robos.
+* Tiempo
+   ```python
     def update_graph_02_2016(value):
       if value == 'Data_FGJ':
           fig = px.treemap(conteo_fecha_2016, path = [px.Constant("Robos CDMX 2016"), 'mes','dia'], values = 'Frecuencia',
@@ -178,7 +189,12 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
           fig = px.line(x = x, y = y)    
       return fig
    ```
-3. ```python
+   * Si el valor es igual a `'Data_FGJ'`, se genera un gráfico de tipo "Treemap" utilizando la biblioteca Plotly Express (px). El gráfico se basará en el DataFrame `conteo_fecha_2016`.
+   * `path` Se define una jerarquía para representar la estructura del Treemap. Aquí, se utiliza `path=[px.Constant("Robos CDMX 2016"), 'mes','dia']`, lo que significa que el Treemap tendrá tres capas: una capa superior con el título "Robos CDMX 2016", una capa intermedia con la columna 'mes' del DataFrame y una capa inferior con la columna 'dia' del DataFrame.
+   * `values` Se define la columna del DataFrame que se utilizará para determinar el tamaño de las cajas en el Treemap. Aquí, se utiliza `'Frecuencia'`.
+   * Se retorna la figura de la gráfica generada `fig` ya sea el Treemap o el gráfico de línea.
+* Mapa
+  ```python
    def update_graph_04_2016(value):
     if value == 'Data_FGJ':
         fig = px.choropleth_mapbox(shape_2016, geojson = shape_2016.geometry, locations = shape_2016.index, color = "ROBOS",
@@ -206,3 +222,13 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
         y = 6 * x
         fig = px.line(x=x, y=y)
    ```
+  * Si el valor es igual a `'Data_FGJ'`, se genera un gráfico de tipo "Choropleth Mapbox" utilizando la biblioteca Plotly Express (px). El gráfico se basará en el DataFrame `shape_2016`.
+  * `shape_2016` Es un DataFrame que contiene información geoespacial y datos sobre robos. Específicamente, para crear un mapa coroplético, donde cada polígono representa una región geográfica (como colonias o distritos) y se colorea según la cantidad de robos (columna "ROBOS") en cada región.
+  * `geojson` Se utiliza `shape_2016.geometry` como el objeto GeoJSON que contiene las formas geográficas de las regiones.
+  * `locations` Se utiliza `shape_2016.index` para especificar las ubicaciones (índices) en el DataFrame que corresponden a las regiones geográficas.
+  * `color` Se utiliza la columna "ROBOS" del DataFrame para determinar el color del mapa coroplético, donde los colores representan la cantidad de robos en cada región.
+  * `mapbox_style` Se utiliza `"open-street-map"` para definir el estilo del mapa base de Mapbox.
+  * Se utiliza `zoom=9.7` y `center={"lat": 19.4326, "lon": -99.1332}` para definir el nivel de zoom y el centro del mapa.
+  * Se agrega una capa adicional de puntos `go.Scattermapbox` a la figura para representar los centroides de las regiones con puntos en el mapa. Estos puntos se utilizan para resaltar información adicional al pasar el cursor sobre ellos `hovertext`. El tamaño de los puntos es 5 y la opacidad es 0, lo que significa que son puntos invisibles pero permiten activar eventos de hover.
+
+
