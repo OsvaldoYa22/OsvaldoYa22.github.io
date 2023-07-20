@@ -13,7 +13,7 @@ tags:
   - Dash
   - Plotly
 ---
-
+Esta es una versión [demo](https://github.com/OsvaldoYa22/app_dash/tree/main) de una app, que muestra de una forma comoda analisis con series de tiempo para los __Robos en CDMX__
 ![](/assets/images/Captura_APP.PNG)
 
 ## Requirements
