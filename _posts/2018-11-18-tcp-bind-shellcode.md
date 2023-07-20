@@ -15,6 +15,8 @@ tags:
   - Dash
   - Plotly
 ---
+![](/assets/images/Captura_dash.PNG)
+
 Esta es una versión [demo](https://github.com/OsvaldoYa22/app_dash/tree/main) de una app, que muestra de una forma comoda los analisis descriptivos y econometricos sobre los __Robos en CDMX__
 ![](/assets/images/Captura_APP.PNG)
 
