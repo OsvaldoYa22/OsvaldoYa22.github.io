@@ -1,6 +1,6 @@
 ---
 layout: single
-title: app - Dash
+title: app - dash
 excerpt: " Dash es una libreria de interfaz de usuario/framework de Python para crear aplicaciones web analíticas, por ejemplo el análisis de datos, exploración de datos, visualización, modelado, control de instrumentos e informes.  Dash se basa en Flask, React y Plotly, y combina la potencia de estas tecnologías para proporcionar una manera sencilla de crear aplicaciones web interactivas con visualizaciones de datos dinámicas."
 date: 2023-07-10
 classes: wide
@@ -13,7 +13,7 @@ tags:
   - Dash
   - Plotly
 ---
-Esta es una versión [demo](https://github.com/OsvaldoYa22/app_dash/tree/main) de una app, que muestra de una forma comoda analisis con series de tiempo para los __Robos en CDMX__
+Esta es una versión [demo](https://github.com/OsvaldoYa22/app_dash/tree/main) de una app, que muestra de una forma comoda los analisis descriptivos y econometricos sobre los __Robos en CDMX__
 ![](/assets/images/Captura_APP.PNG)
 
 ## Requirements
