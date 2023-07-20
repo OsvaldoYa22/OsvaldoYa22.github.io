@@ -68,12 +68,12 @@ Ahora debemos decirle a Ciw como se ve nuestro sistema
 Tomar en cuenta que las unidades se consideran en minutos, por esta razón:
 * Exponential(rate=0.2) describe nuestras llegadas (12/hora)
 * Exponential(rate=0.1) describe el tiempo de atención del servidor
-
 ```R
 N = ciw.create_network(arrival_distributions=[ciw.dists.Exponential(rate=0.2)],
 	service_distributions=[ciw.dists.Exponential(rate=0.1)],
 	number_of_servers=[3])
 ```
+
 Ahora establecemos una semilla y creamos nuestro banco.
 ```R
 #Establecemos una semilla 
