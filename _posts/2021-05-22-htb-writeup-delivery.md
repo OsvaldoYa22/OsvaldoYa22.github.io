@@ -5,7 +5,7 @@ excerpt: " Este lenguaje es conocido por su amplia gama de paquetes estadístico
 date: 2023-05-23
 classes: wide
 header:
-  teaser: /assets/images/Captura09.PNG
+  teaser: /assets/images/Captura_r.PNG
   teaser_home_page: true
   icon: /assets/images/hackthebox.webp
 categories:
@@ -17,7 +17,7 @@ tags:
   - Listas
 ---
 
-![](/assets/images/Captura09.PNG)
+![](/assets/images/Captura_r.PNG)
 
 Este lenguaje es conocido por su amplia gama de paquetes estadísticos. Es un lenguaje especialmente adecuado para el análisis estadístico y la implementación de algoritmos complejos. Si estás interesado en el análisis exploratorio de datos, pruebas de hipótesis, modelado predictivo o cualquier otro aspecto estadístico, R te brinda las herramientas necesarias para llevar a cabo estos análisis de manera eficiente ademas R cuenta con una comunidad activa y comprometida de usuarios en todo el mundo. Esto significa que hay una gran cantidad de recursos disponibles, como paquetes, tutoriales, foros de discusión y blogs, que pueden ayudarte a resolver problemas y aprender de forma autodidacta.
 
