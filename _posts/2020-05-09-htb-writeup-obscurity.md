@@ -54,7 +54,7 @@ Suponga que es gerente de un banco y le gustaria saber cuanto tiempo esperan uss
 * Los clientes llegan al azar aproximadamente 12/hora con una distribución Exponencial
 * El tiempo de atención dura aproximadamente 10 minutos con una distribución Exponencial
 * Cuenta con 3 servidores
-¿En primedio cuanto esperan os clientes?
+¿En primedio cuanto esperan los clientes?
 Solución:
 Primero importamos nuestras librerias
 ```R
@@ -64,10 +64,11 @@ Ahora debemos decirle a Ciw como se ve nuestro sistema
 * number of servers = numero de servidores
 * arrival distributions = distribucion de llegadas
 * service distributions = distribucion de atencion
-  
+
 Tomar en cuenta que las unidades se consideran en minutos, por esta razón:
 * Exponential(rate=0.2) describe nuestras llegadas (12/hora)
 * Exponential(rate=0.1) describe el tiempo de atención del servidor
+
 ```R
 N = ciw.create_network(arrival_distributions=[ciw.dists.Exponential(rate=0.2)],
 	service_distributions=[ciw.dists.Exponential(rate=0.1)],
