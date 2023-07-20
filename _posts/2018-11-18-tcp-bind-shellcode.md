@@ -13,6 +13,9 @@ tags:
   - Dash
   - Plotly
 ---
+
+![](/assets/images/Captura_APP.PNG)
+
 ## Requirements
 ```python
 from dash import Dash, dcc, html
@@ -77,7 +80,30 @@ def render_content_table(tab):
         return html.Div([])
 ```
 Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" según seleccione el usuario
+* Econometrico
+  ![](/assets/images/ST_01.PNG) 
+    ```python
+    html.Div(
+            style = {'display': 'flex', 'flex-wrap': 'wrap'},
+            children = [
+                html.Div(
+                    style = {'width': '50%'},
+                    children = [
+                        html.Div(
+                            style = {'background-color': '#F2F2F2','border-radius': '15px',
+                                'margin': '5px','padding': '7px','position': 'relative',
+                                'box-shadow': '4px 4px 4px 4px lightgrey','overflow-y': 'auto'},
+                            children = [
+                                dcc.Graph(id = 'Mi_grafica_ST_2', figure = {}),
+                            ]
+                        )
+                    ]
+                )
+    ```
+    * Se crea un componente de gráfica `Graph` utilizando Dash. Se asigna el identificador `'Mi_grafica_ST_2'` a la gráfica y se inicializa con una figura vacía `figure = {}`. Este identificador será útil para actualizar el contenido de la gráfica más adelante mediante un callback.
 * Descriptivo
+  
+  ![](/assets/images/Captura_APP.PNG)
 
   ```python
   html.Div([
@@ -120,28 +146,10 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
   * Se agrega un párrafo `<p>`que muestra el texto "Seleccione el origen de los datos". El texto tiene algunos estilos CSS definidos, como negrita `'font-weight': 'bold'`, un fondo de color `'background-color': '#F2F2F2'`, un borde redondeado `'border-radius': '3px'`, margen `'margin': '5px'` y relleno `'padding': '7px'`. El párrafo también tiene un sombreado `'box-shadow'` para dar una apariencia visual de relieve.
   * Se crea un conjunto de elementos de opción `RadioItems` que permite al usuario seleccionar una de las dos opciones: "Data_FGJ" o "Data_C5". Cada opción tiene una etiqueta que incluye una imagen `html.Img` que se mostrará junto al texto de la opción. El valor predeterminado seleccionado es "Data_FGJ".
   * Se agrega un control deslizante `Slider` que permite al usuario seleccionar un año entre 2016 y 2023. El valor predeterminado es 2016. Se muestran marcas en el control deslizante para cada año entre 2016 y 2023.
-* Econometrico
-    ```python
-    html.Div(
-            style = {'display': 'flex', 'flex-wrap': 'wrap'},
-            children = [
-                html.Div(
-                    style = {'width': '50%'},
-                    children = [
-                        html.Div(
-                            style = {'background-color': '#F2F2F2','border-radius': '15px',
-                                'margin': '5px','padding': '7px','position': 'relative',
-                                'box-shadow': '4px 4px 4px 4px lightgrey','overflow-y': 'auto'},
-                            children = [
-                                dcc.Graph(id = 'Mi_grafica_ST_2', figure = {}),
-                            ]
-                        )
-                    ]
-                )
-    ```
-    * Se crea un componente de gráfica `Graph` utilizando Dash. Se asigna el identificador `'Mi_grafica_ST_2'` a la gráfica y se inicializa con una figura vacía `figure = {}`. Este identificador será útil para actualizar el contenido de la gráfica más adelante mediante un callback.
+
 ## Graficas
-* Alcaldias 
+* Alcaldias
+  ![](/assets/images/Captura_ALCALDIAS.PNG) 
   ```python
    def update_graph_01_2016(value):
     fig = None
@@ -171,6 +179,7 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
   * `color_continuous_scale` Se define la escala de colores utilizada para el Treemap. Aquí, se utiliza el tema `'orrd'`.
   * `hover_data` Se define qué información se mostrará cuando se pase el cursor sobre las cajas del Treemap. Aquí, se muestra el nombre de la colonia y el número de robos.
 * Tiempo
+  ![](/assets/images/Captura_TIEMPO.PNG) 
    ```python
     def update_graph_02_2016(value):
       if value == 'Data_FGJ':
@@ -194,6 +203,11 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
    * `values` Se define la columna del DataFrame que se utilizará para determinar el tamaño de las cajas en el Treemap. Aquí, se utiliza `'Frecuencia'`.
    * Se retorna la figura de la gráfica generada `fig` ya sea el Treemap o el gráfico de línea.
 * Mapa
+  <p align="center">
+  <img src="/assets/images/ST_03.PNG" alt="Imagen centrada" />
+  </p>
+
+
   ```python
    def update_graph_04_2016(value):
     if value == 'Data_FGJ':
@@ -230,5 +244,11 @@ Dentro de cada `html.Div` se mostrara el analsis "Econometrico" o "Descriptivo" 
   * `mapbox_style` Se utiliza `"open-street-map"` para definir el estilo del mapa base de Mapbox.
   * Se utiliza `zoom=9.7` y `center={"lat": 19.4326, "lon": -99.1332}` para definir el nivel de zoom y el centro del mapa.
   * Se agrega una capa adicional de puntos `go.Scattermapbox` a la figura para representar los centroides de las regiones con puntos en el mapa. Estos puntos se utilizan para resaltar información adicional al pasar el cursor sobre ellos `hovertext`. El tamaño de los puntos es 5 y la opacidad es 0, lo que significa que son puntos invisibles pero permiten activar eventos de hover.
+
+## Versión movil
+<p align="center">
+  <img src="/assets/images/Captura_MOVIL_02.PNG" alt="Imagen centrada" />
+</p>
+
 
 
