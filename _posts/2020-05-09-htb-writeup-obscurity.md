@@ -5,7 +5,7 @@ excerpt: "Ciw es una biblioteca de Python para la simulación de redes de colas 
 date: 2020-05-09
 classes: wide
 header:
-  teaser: /assets/images/Captura17.PNG
+  teaser: /assets/images/Captura_ciw.PNG
   teaser_home_page: true
   icon: /assets/images/hackthebox.webp
 categories:
@@ -16,7 +16,7 @@ tags:
   - Inventarios
 ---
 
-![](/assets/images/Captura17.PNG)
+![](/assets/images/Captura_ciw.PNG)
 
 En este post encontraras un breve resumen del funcionamiento de la libreria Ciw de Python, asi como
 algunos programas de simulación de eventos discretos y ejemplos teoricos de redes de colas.
