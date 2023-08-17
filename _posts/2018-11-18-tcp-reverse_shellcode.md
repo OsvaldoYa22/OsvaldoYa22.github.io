@@ -19,6 +19,8 @@ In this article, a brief explanation is provided about creating an interactive a
 
 ![](/assets/images/Captura_folium.PNG)
 
+![](https://youtu.be/fwHeeGhOidw)
+
 
 **Importing Libraries and Preparation**
 
