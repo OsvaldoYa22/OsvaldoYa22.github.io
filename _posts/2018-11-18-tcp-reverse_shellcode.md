@@ -19,6 +19,10 @@ In this article, a brief explanation is provided about creating an interactive a
 
 ![](/assets/images/Captura_folium.PNG)
 
+<iframe width="600" height = "420"
+src="https://www.youtube.com/embed/qKf2EwInKbA">
+</iframe>
+
 ![](https://youtu.be/fwHeeGhOidw)
 
 
