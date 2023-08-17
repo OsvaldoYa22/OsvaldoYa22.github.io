@@ -1,7 +1,7 @@
 ---
 layout: single
-title: TCP reverse shellcode
-date: 2018-11-18 12:00:00
+title: Geospatial Visualizations with Dash and Folium
+date: 2023-08-17 
 classes: wide
 header:
   teaser: /assets/images/slae32.png
@@ -14,7 +14,9 @@ tags:
   - tcp reverse shellcode
 ---
 
-A TCP reverse shell connects back to the attacker machine, then executes a shell and redirects all input & output to the socket. This is especially useful when a firewall denies incoming connections but allows outgoing connections.
+In this article, a brief explanation is provided about creating an interactive application that combines geographical data with powerful visualization tools. This application is based on the location of bars in Mexico City (data can be obtained from the following link: https://www.inegi.org.mx/app/descarga/ or you can access the pre-processed data in the following repository: https://github.com/OsvaldoYa22/Geospatial-Visualizations).
+
+The application allows filtering points or polygons according to user needs. Additionally, the `Geocoding API` and `Street View Static API` are used to enhance the user's visual experience. As a result, it's possible to download the map with the selected filters into an HTML file, utilizing Python.
 
 ### C prototype
 ---------------
