@@ -20,7 +20,7 @@ In this article, a brief explanation is provided about creating an interactive a
 
 
 <iframe width="600" height = "420"
-src="https://www.youtube.com/watch?v=fwHeeGhOidw">
+src="https://youtu.be/fwHeeGhOidw">
 </iframe>
 
 
