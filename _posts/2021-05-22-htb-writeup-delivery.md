@@ -63,13 +63,13 @@ abs(A) #Valor absoluto de A
 factorial(A) # Factorial de A
 ```
 ### Creando funciones
-Podemos crear nuestras propias funciones para adaptarlas a lo que necesitemos. Vamos a crear una función que resuelva ecuacionde segundo grado, tomando como referencia la formula general para resolver la ecuación.  
+Podemos crear nuestras propias funciones para adaptarlas a lo que necesitemos. Vamos a crear una función que resuelva ecuacion de segundo grado, tomando como referencia la fórmula general para resolver la ecuación.  
 ```R
 X_1 = function(a,b,c){(-b-sqrt(b^2-4*a*c))/(2*a)}
 X_2 = function(a,b,c){(-b+sqrt(b^2-4*a*c))/(2*a)}
 C <- 2 #La variables "A" y "B" siguen cargadas en nuestro "Environment"
 ```
-Mandamos llamar a nuestra función de la siguente forma:
+Mandamos llamar a nuestra función de la siguiente forma:
 
 ```R
 X_1(A,B,C)
@@ -77,7 +77,7 @@ X_1(A,B,C)
 X_2(A,B,C)
 [1] -0.2615832
 ```
-También podemos acceder a nuestras funciones sin asignar los coefifientes a una variable, por ejemplo:
+También podemos acceder a nuestras funciones sin asignar los coeficientes a una variable, por ejemplo:
 
 ```R
 X_1(1,3,1)
@@ -85,7 +85,7 @@ X_1(1,3,1)
 X_2(1,3,1)
 [1] -0.381966
 ```
-Podemos ingresar **condiciones** a nuestra **función**, por ejemplo; en caso de que nuestro discriminante sea positivo ejecutar el programa y mostrar los resultados junto con su grafica, en caso contrario, mostrar un mensaje indicando que las soluciones son imaginarias.
+Podemos ingresar **condiciones** a nuestra **función**, por ejemplo; en caso de que nuestro discriminante sea positivo ejecutar el programa y mostrar los resultados junto con su gráfica, en caso contrario, mostrar un mensaje indicando que las soluciones son imaginarias.
 
 ```R
 ecuacion_segundo_grado <- function(a, b, c) { #damos los mismos paramentros de entrada
@@ -157,7 +157,7 @@ c(6,2,7)
 * `&` : Y lógico 
 * `|` : O lógico
 
-Podemos utilizar operadores lógicos que es una forma de "condicionar" a los vectores, asi con una seria de instrucciones lógicas podemos acceder solo a los datos que necesitemos de dicho vector.
+Podemos utilizar operadores lógicos que es una forma de "condicionar" a los vectores, así con una seria de instrucciones lógicas podemos acceder solo a los datos que necesitemos de dicho vector.
 
 ```R
 v = c(1,2,3,4,3,2,4,2,3,3) #Creamos a nuestro vector y lo asignamos a una variable
