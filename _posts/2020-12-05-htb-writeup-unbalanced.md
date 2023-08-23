@@ -99,14 +99,14 @@ addLegendCustom <- function(map, colors, labels, sizes, shapes, borders, opacity
 }
 ```
 ## Generamos nuestro mapa 
-Usamos la siguientes lineas de comando para iniciar nuetro mapa con la libreria  `leaflet`
+Usamos las siguientes líneas de comando para iniciar nuestro mapa con la librería  `leaflet`
 
 ```R
 leaflet()  %>%
 ```
 
 ### Capas
-Agremamos fierentes capas de estilo a nustro mapa 
+Agregamos diferentes capas de estilo a nuestro mapa 
 Cada `addTiles()` que se agrega le asignamos un grupo para posteriormente poder agregar ese filtro al addlayer
 ```R
   addTiles() %>% addProviderTiles(providers$Esri.WorldGrayCanvas, group = "B&W") %>%
@@ -116,7 +116,7 @@ Cada `addTiles()` que se agrega le asignamos un grupo para posteriormente poder 
            attribution = NULL, layerId = NULL, options = tileOptions(),group = "Satelital")%>%
 ```
 ### Poligonos
-De la misma forma que agregamos distintos estilos de mapa podemos agregar nuestras propias capas castograficas 
+De la misma forma que agregamos distintos estilos de mapa podemos agregar nuestras propias capas cartograficas 
 ```R
 ## agregamos los poligonos de alcaldias de la CDMX aquí tambien se modifica el color, la opacidad del color como y se agrega al grupo que va a pertencer
   addPolygons(data=ALCALDIAS,color = "black",fillColor = "transparent",fillOpacity =0.01,weight = 1,popup = ALCALDIAS$ALCALDIA,
@@ -125,7 +125,7 @@ De la misma forma que agregamos distintos estilos de mapa podemos agregar nuestr
   addPolylines(data=VIALIDADES_PRIMARIAS,color = "#8B0000",weight = 0.8, group="Primarias",options = pathOptions(pane="polygons"))%>%
 ```
 ### Puntos
-De una froma similar agregamos nuestros puntos, al ser puntos nosotros contamos con longitud y latitud en nuestra base de datos, por la anto le decimos a nuestra función como se muestran esas celdas para que las interprete y las muestre en el mapa
+De una forma similar agregamos nuestros puntos, al ser puntos nosotros contamos con longitud y latitud en nuestra base de datos, por lo tanto le decimos a nuestra función como se muestran esas celdas para que las interprete y las muestre en el mapa
 
 ```R
   addCircles(data = Robo_Vehiculo_con_Violencia,lng = Robo_Vehiculo_con_Violencia$longitud,lat = Robo_Vehiculo_con_Violencia$latitud,color = "#9AC0CD" ,radius = 5,fillOpacity = T,
@@ -134,7 +134,7 @@ De una froma similar agregamos nuestros puntos, al ser puntos nosotros contamos 
              group = paste("Puntos","(",nrow(Robo_Vehiculo_con_Violencia),")"),options = pathOptions(pane="li"))%>%
 ```
 ### Mapa de calor 
-Con la función `addWebGLHeatmap` agreamos a nuestro mapa un acumulado de esos puntos mediante una gama de colores, es decir se crea un mapa de calor
+Con la función `addWebGLHeatmap` agregamos a nuestro mapa un acumulado de esos puntos mediante una gama de colores, es decir se crea un mapa de calor
 ```R
 addWebGLHeatmap(data = Robo_Vehiculo_con_Violencia,lng = Robo_Vehiculo_con_Violencia$longitud,lat = Robo_Vehiculo_con_Violencia$latitud, group = "Mapa de calor",size=700,gradientTexture = "skyline",
                   opacity = 0.7 )%>%
@@ -160,7 +160,7 @@ addLayersControl(overlayGroups = c( "&nbsp; <b>Vista </b> &nbsp; ", ## Esto se v
   ),
   options = layersControlOptions(collapsed = T))%>% 
 ```
-Ahora necesitamos darle un fromato a nuestro addLayer, para que nuestros "titulos" tengan un fondo del color que nosotros le indiquemos y la posición que necesitemos para las descripciones de nuestros addLayers
+Ahora necesitamos darle un formato a nuestro addLayer, para que nuestros "títulos" tengan un fondo del color que nosotros le indiquemos y la posición que necesitemos para las descripciones de nuestros addLayers
 ```R
 htmlwidgets::onRender(jsCode = htmlwidgets::JS("function(btn,map){ 
                                                  var lc=document.getElementsByClassName('leaflet-control-layers-overlays')[0]
